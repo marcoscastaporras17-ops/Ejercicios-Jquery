@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic style: Manipulating CSS with JavaScript Examples - Accessing Style Sheets Example </title>
+
+	<link rel="stylesheet" href="CSS/CSS8.CSS">
+	<script src="js/codigo18.js" charset="UTF-8"></script>
+
+</head>
+<button class="back-btn" onclick="history.back()">← Regresar</button>
+
+<body>
+	<h1>
+		Estilo dinámico: Manipulación de CSS con JavaScript
+	</h1><hr>
+
+	<h2>Acediendo a estilos</h2>
+	<p>
+		El ejemplo muestra como acceder, crear, y eliminar estilos.
+		Presione el botón para agrerar o elimirar el estilo
+	</p>
+
+	<input id="tss" class='button' type='button' value="toggleStyleSheet()" />
+	<div id='e1' class="example">
+		Número de estilo: <span id="numOfStyleSheets"></span>
+	</div>
+
+	<div>
+		<div class="code_css">
+			<h4>Código CSS </h4>
+			<pre>&lt;style id='e1_style'&gt;
+#e1 {
+	font-weight: bold;
+	font-size: 115%;
+	color: green;
+}
+&lt;/style&gt;
+Or (only one added at a time)
+&lt;style id='e1_style'&gt;
+#e1 {
+	border: 2px solid black;
+	background-color: blue;
+}
+&lt;/style&gt;
+			</pre>
+		</div>
+
+		<div class="code_js">
+			<h4> Código JavaScript </h4>
+			<pre>var e1_toggle = true;
+function toggleStyleSheet() {
+	var node = document.getElementById('e1_style');
+	node.parentNode.removeChild(node);
+	var sheet = document.createElement('style')
+	sheet.id = 'e1_style';
+	if(e1_toggle)
+		sheet.innerHTML = "#e1 {border: 2px solid black; background-color: blue;}";
+	else
+		sheet.innerHTML = "#e1 {font-weight: bold; font-size: 115%; color: green;}";
+
+	document.body.appendChild(sheet);
+	e1_toggle = ! e1_toggle;
+	updateNumberOfStyleSheets();
+}
+function updateNumberOfStyleSheets(){
+	document.getElementById('numOfStyleSheets').innerHTML = document.styleSheets.length;
+}
+			</pre>
+		</div>
+	</div>
+
+</body>
+</html>
