@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  background-color: blanchedalmond;
+  width: 50%;
+  max-width: 800px;
+  min-width: 480px;
+  margin: 0 auto;
+}
+
+.ultimoResultado {
+  color: blanchedalmond;
+  padding: 3px;
+}
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: white;
+    color: #1d4ed8;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.back-btn:hover {
+    background: #1d4ed8;
+    color: white;
+}

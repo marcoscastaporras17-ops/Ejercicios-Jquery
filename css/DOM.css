@@ -1,0 +1,13 @@
+.oculto { 
+  display: none; 
+}
+
+.visible { 
+  display: inline; 
+}
+
+#e1 {
+  font-weight: bold;
+  font-size: 115%;
+  color: green;
+}
